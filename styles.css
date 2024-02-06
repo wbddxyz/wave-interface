@@ -1,0 +1,84 @@
+/* PS3 Interface styles */
+.ps3-interface {
+  background: transparent;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  padding: 20px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+  transition: transform 0.2s ease-in-out; /* Add transition for smooth size change */
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block; /* Add this to allow li to transition */
+  padding: 10px; /* Adjust padding as needed */
+  position: relative; /* Set position to relative */
+  color: white; /* Set text color to white */
+  background: linear-gradient(to bottom, #888, #fff); /* Add grey gradient to text */
+  -webkit-background-clip: text; /* Apply gradient to text only (Webkit browsers) */
+  background-clip: text; /* Apply gradient to text only */
+}
+
+.menu ul li a:hover {
+  color: #999;
+  animation: glow 0.5s infinite alternate; /* Apply glow animation on hover */
+}
+
+.menu ul li a.active {
+  color: #0cf; /* Active menu item color */
+  animation: glowSelected 0.5s alternate forwards; /* Apply glow animation when selected */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Start with a slight glow */
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Increase glow intensity */
+  }
+}
+
+@keyframes glowSelected {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Start with a slight glow */
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Increase glow intensity */
+  }
+}
+
+.content {
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Position the canvas behind the PS3 interface */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
